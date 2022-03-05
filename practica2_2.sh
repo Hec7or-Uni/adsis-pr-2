@@ -5,7 +5,7 @@ for file in "$@"; do
 	if [ -f "$file" ]; then
 		more -d "$file"
 	else
-		echo "$file no existe"
+		echo "$file no es un fichero"
 	fi
 done
 
