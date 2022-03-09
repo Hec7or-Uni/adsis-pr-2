@@ -5,9 +5,9 @@ if [ $(find $HOME -maxdepth 1 -name "bin*" -type d | wc -l) -ge 1 ]; then
 	path=$(find $HOME -maxdepth 1 -name "bin*" -type d | xargs stat -c %n,%Y | sort -n -k2 -r | head -n 1 | cut -f1 -d ",")
 else
 	path=$(mktemp -d -p "${HOME}/" binXXX)
+	echo "Se ha creado el directorio $path"
 fi
 
-echo "Se ha creado el directorio $path"
 echo "Directorio destino de copia: $path"
 
 files=$(find . -type f -executable)
