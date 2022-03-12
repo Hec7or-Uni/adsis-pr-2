@@ -4,6 +4,7 @@
 echo -n "Introduzca el nombre de un directorio: "
 read path
 
+# Elimina los caracteres "\"" de la cadena leida
 if [[ $path =~ "\"" ]]; then
 	path=${path//[\"]/$""}
 fi
